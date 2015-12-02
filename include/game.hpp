@@ -12,6 +12,8 @@ private:
 
     sf::RenderWindow *screen;
 
+    void mainLoop();
+
 public:
     Game();
     ~Game();

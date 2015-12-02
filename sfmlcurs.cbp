@@ -45,8 +45,10 @@
 		<Linker>
 			<Add directory="../../SFML-2.2/lib" />
 		</Linker>
+		<Unit filename="include/engine.hpp" />
 		<Unit filename="include/game.hpp" />
 		<Unit filename="include/sfmlcurs.hpp" />
+		<Unit filename="src/engine.cpp" />
 		<Unit filename="src/game.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/sfmlcurs.cpp" />
