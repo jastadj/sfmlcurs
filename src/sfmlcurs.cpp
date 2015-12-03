@@ -81,7 +81,7 @@ bool SFMLCurs::initColors()
 //initialize all the ascii graphics for each available color fore/background color
 bool SFMLCurs::initSprites()
 {
-    printStatus("SFMLCurs:Initializing sprites...\n");
+    printStatus("SFMLCurs:Initializing sprites...");
 
     //color mask for foreground and background
     sf::Color colormaskbg(0xff,0x00,0xff);
@@ -158,10 +158,6 @@ bool SFMLCurs::initSprites()
 
                 sf::Sprite newsprite(m_Textures[n][p], clip);
                 newsprite.setScale(m_Scale, m_Scale);
-
-                //debug
-                //m_Screen->draw(newsprite);
-                //m_Screen->display();
 
                 m_Sprites[i][n].push_back(newsprite);
             }

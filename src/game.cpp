@@ -44,8 +44,6 @@ bool Game::initScreen()
     int termwidth = sfmlcurses->getTileSize().x * 80;
     int termheight = sfmlcurses->getTileSize().y * 25;
 
-    std::cout << "term width and height = " << termwidth << "," << termheight << std::endl;
-
     screen = new sf::RenderWindow(sf::VideoMode(termwidth, termheight ,32), "Test");
 
     //did render window create as expected?
