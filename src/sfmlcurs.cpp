@@ -66,6 +66,7 @@ bool SFMLCurs::initColors()
     m_AsciiColors.push_back(sf::Color(0xff, 0x00, 0xff)); // bright magenta
     m_AsciiColors.push_back(sf::Color(0x80, 0x80, 0x00)); // yellow
     m_AsciiColors.push_back(sf::Color(0xff, 0xff, 0x00)); // bright yellow
+    m_AsciiColors.push_back(sf::Color(0x00, 0x00, 0x00, 0xff)); // transparent
 
     //check that initialized color count matches enumerated color count
     if( int(m_AsciiColors.size()) != SFC_TOTAL_COLORS)

@@ -25,6 +25,7 @@ enum {
         SFC_MAGENTA_B,
         SFC_YELLOW,
         SFC_YELLOW_B,
+        SFC_TRANSPARENT,
         SFC_TOTAL_COLORS
      };
 
