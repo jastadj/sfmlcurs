@@ -260,3 +260,8 @@ void SFMLCurs::printStatus(std::string statstr)
 
     else std::cout << statstr;
 }
+
+sf::Sprite SFMLCurs::copyCharacter(int ascii_index, int fgcolor, int bgcolor)
+{
+    return m_Sprites[ascii_index][bgcolor][fgcolor];
+}

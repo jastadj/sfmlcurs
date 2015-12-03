@@ -61,7 +61,14 @@ void Game::mainLoop()
 {
     bool quit = false;
 
+    sf::Clock myclock;
+
     sf::Vector2i playerpos(6,6);
+
+    sf::Sprite charcopy = sfmlcurses->copyCharacter('Y', SFC_WHITE, SFC_TRANSPARENT);
+    charcopy.setPosition(50,50);
+    charcopy.setOrigin( charcopy.getLocalBounds().width/2, charcopy.getLocalBounds().height/2);
+    float char_rotation = 0;
 
     while(!quit)
     {
@@ -82,11 +89,18 @@ void Game::mainLoop()
             }
         }
 
+        //update rotating char
+        //if( myclock.getElapsedTime().asMilliseconds() >= 5000) myclock.restart();
+        char_rotation = (360.f / 1000) * myclock.getElapsedTime().asMilliseconds();
+        charcopy.setRotation(char_rotation);
+
         //draw
         sfmlcurses->drawString(screen, 0, 0, "This is a test!", SFC_GREEN_B);
         sfmlcurses->draw(screen, 5, 5, 3, SFC_RED_B, SFC_WHITE);
         sfmlcurses->draw(screen, playerpos.x, playerpos.y, '@', SFC_RED_B);
         sfmlcurses->drawAtPixel(screen, 3, 3, 'G', SFC_WHITE_B, SFC_TRANSPARENT);
+
+        screen->draw(charcopy);
 
         screen->display();
 

@@ -75,6 +75,9 @@ public:
             int fgcolor = SFC_WHITE, int bgcolor = SFC_BLACK);
     void drawAtPixel(sf::RenderTarget *rendertarget, int x, int y, int ascii_index,
             int fgcolor = SFC_WHITE, int bgcolor = SFC_BLACK);
+
+    //
+    sf::Sprite copyCharacter(int ascii_index, int fgcolor, int bgcolor);
 };
 
 #endif // SFML_CURS
