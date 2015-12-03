@@ -1,14 +1,18 @@
 #include "sfmlcurs.hpp"
 #include <iostream>
 
-SFMLCurs::SFMLCurs(std::string spritesheetfile, int char_scale)
+SFMLCurs::SFMLCurs(std::string spritesheetfile, int char_scale, bool isSmooth)
 {
     //set default flags
     m_Initialized = false;
     m_QuietMode = false;
+    m_SmoothTextures = false;
 
     //set sprite sheet file to use
     m_SpriteSheetFile = spritesheetfile;
+
+    //use smooth textures?
+    m_SmoothTextures = isSmooth;
 
     //set character scale
     m_Scale = char_scale;
@@ -113,6 +117,9 @@ bool SFMLCurs::initSprites()
         {
             //texture for image
             sf::Texture newtxt;
+
+            //set smoothing
+            newtxt.setSmooth(m_SmoothTextures);
 
             //create temporary copy of image file for manipulation
             sf::Image newimage = spritesheetimage;

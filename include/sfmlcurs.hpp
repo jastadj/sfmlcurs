@@ -37,6 +37,7 @@ private:
     //init
     bool m_Initialized;
     bool m_QuietMode;
+    bool m_SmoothTextures;
     int m_Scale;
     bool initColors();
     bool initSprites();
@@ -55,7 +56,7 @@ private:
     void printStatus(std::string statstr);
 
 public:
-    SFMLCurs(std::string spritesheetfile, int char_scale = 1);
+    SFMLCurs(std::string spritesheetfile, int char_scale = 1, bool isSmooth = false);
     ~SFMLCurs();
 
     bool init();
