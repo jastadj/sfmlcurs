@@ -5,12 +5,16 @@
 
 #include "sfmlcurs.hpp"
 
+//example of using sfmlcurs
+
 class Game
 {
 
 private:
 
     sf::RenderWindow *screen;
+
+    SFMLCurs *sfmlcurses;
 
     void mainLoop();
 
