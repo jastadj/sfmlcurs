@@ -86,6 +86,7 @@ void Game::mainLoop()
         sfmlcurses->drawString(screen, 0, 0, "This is a test!", SFC_GREEN_B);
         sfmlcurses->draw(screen, 5, 5, 3, SFC_RED_B, SFC_WHITE);
         sfmlcurses->draw(screen, playerpos.x, playerpos.y, '@', SFC_RED_B);
+        sfmlcurses->drawAtPixel(screen, 3, 3, 'G');
 
         screen->display();
 

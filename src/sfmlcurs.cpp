@@ -210,6 +210,27 @@ void SFMLCurs::drawString(sf::RenderTarget *rendertarget, int x, int y, std::str
     }
 }
 
+void SFMLCurs::drawAtPixel(sf::RenderTarget *rendertarget, int x, int y, int ascii_index, int fgcolor, int bgcolor)
+{
+    if(rendertarget == NULL) return;
+
+    //check if ascii index is out or range
+    if(ascii_index < 0 || ascii_index >= SFMLCURS_WIDTH * SFMLCURS_HEIGHT)
+    {
+        char buf[256];
+
+        printStatus("SFMLCURS:Error drawing ascii index.  Index out of range : ");
+        printStatus(std::string( itoa(ascii_index, buf,10) ) );
+        printStatus("\n");
+        return;
+    }
+
+    //position and draw sprite
+    m_Sprites[ascii_index][bgcolor][fgcolor].setPosition( x * m_Scale, y * m_Scale);
+
+    rendertarget->draw( m_Sprites[ascii_index][bgcolor][fgcolor] );
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 //  TOOL / UTILITY FUNCTIONS
 

@@ -72,6 +72,8 @@ public:
             int fgcolor = SFC_WHITE, int bgcolor = SFC_BLACK);
     void drawString(sf::RenderTarget *rendertarget, int x, int y, std::string astring,
             int fgcolor = SFC_WHITE, int bgcolor = SFC_BLACK);
+    void drawAtPixel(sf::RenderTarget *rendertarget, int x, int y, int ascii_index,
+            int fgcolor = SFC_WHITE, int bgcolor = SFC_BLACK);
 };
 
 #endif // SFML_CURS
